@@ -1,12 +1,19 @@
 ---
 tags: comp sci, computer science, logic, cs, interview questions, interview qs
 languages: ruby
-resources: 1
+resources: 2
 ---
 
 # Stock Market
 
 ## Contents
+
+|Section|
+|-------|
+|[Background](#background)|
+|[Objective](#objective)|
+|[Instructions](#instructions)|
+|[Resources](#resources)|
 
 ## Background
 
@@ -16,13 +23,13 @@ The paper looks like this:
 
 ```json
 [
-  {"0" => "36.23"},
-  {"1" => "36.48"},
-  {"2" => "37.23"},
-  {"3" => "34.03"},
-  {"4" => "38.89"},
-  {"4" => "22.55"},
-  ...
+  {"0": "36.23"},
+  {"1": "36.48"},
+  {"2": "37.23"},
+  {"3": "34.03"},
+  {"4": "38.89"},
+  {"4": "22.55"},
+  {"etc."}
 ]
 ```
 
@@ -32,12 +39,12 @@ From this information, you understand that at 9:30 am, you could buy a share of 
 
 ## Objective
 
-Create a method `get_buy_and_sell_times` which analyze the contents of `jamba-juice-stock.json` in your `lib` folder. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like. 
+Create a method `get_buy_and_sell_times` which will analyze the contents of a stock info JSON file, such as `spec/fixturesjamba-juice-stock.json`. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like.
 
 Let's assume two things:
 
-1. You can only buy and sell once, you don't want to arouse suspicion after all
-2. that you must buy stock before you sell stock.
+1. You can only buy and sell once because you don't want to arouse suspicion
+2. You must buy stock before you sell stock
 
 You want to return a hash with two key-value pairs:
 
@@ -54,4 +61,10 @@ For example:
 {:buy => "9:35 a.m.", :sell => "2:40 p.m."}
 ```
 
+## Instructions
 
+Flesh out the method `get_buy_and_sell_times` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
+
+## Resources
+* [HackHands](https://hackhands.com/) - [Ruby Read JSON File Hash](https://hackhands.com/ruby-read-json-file-hash/)
+* [StackOverflow](http://stackoverflow.com/) - [From JSON to a Ruby Hash?](http://stackoverflow.com/a/9055150/2890716)
