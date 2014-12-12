@@ -3,7 +3,7 @@ require 'json'
 
 STOCK_OPENING_TIME = Time.new(2014,11,18,9,30)
 
-def get_buy_and_sell_times(json_file_path)
+def analyze_stock(json_file_path)
   data = JSON.parse(File.read(json_file_path))
   differences = []
   data.each do |buy_time, current_price|

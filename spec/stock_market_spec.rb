@@ -1,8 +1,8 @@
-describe '#get_buy_and_sell_times' do
+describe '#analyze_stock' do
 
   context "w/Jamba Juice JSON" do
     before(:each) do
-      @jamba_juice = get_buy_and_sell_times("spec/fixtures/jamba-juice-stock.json")
+      @jamba_juice = analyze_stock("spec/fixtures/jamba-juice-stock.json")
     end
 
     it 'returns a hash' do
@@ -26,7 +26,7 @@ describe '#get_buy_and_sell_times' do
 
   context "w/Apple JSON" do
     it 'correctly predicts when to buy and sell Apple stock' do
-      apple = get_buy_and_sell_times("spec/fixtures/apple-stock.json")
+      apple = analyze_stock("spec/fixtures/apple-stock.json")
       expect(apple[:buy]).to eq("11:04 am")
       expect(apple[:sell]).to eq("11:06 am")
       expect(apple[:profit]).to eq("$90.84")
@@ -35,7 +35,7 @@ describe '#get_buy_and_sell_times' do
 
   context "w/Tesla JSON" do
     it 'correctly predicts when to buy and sell Tesla stock' do
-      tesla = get_buy_and_sell_times("spec/fixtures/tesla-stock.json")  
+      tesla = analyze_stock("spec/fixtures/tesla-stock.json")  
       expect(tesla[:buy]).to eq("12:03 pm")
       expect(tesla[:sell]).to eq("12:16 pm")
       expect(tesla[:profit]).to eq("$80.09")
