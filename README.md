@@ -55,7 +55,7 @@ You want to return a hash with three key-value pairs: 1) buy time, 2) sell time,
 
 ## Instructions
 
-Flesh out the method `analyze_stock` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
+Flesh out the method `analyze_stock` in `lib/stock_market.rb` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
 
 ## Resources
 
