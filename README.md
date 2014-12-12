@@ -40,7 +40,7 @@ From this information, you understand that at 9:30 a.m., you could buy a share o
 
 ## Objective
 
-Create a method `analyze_stock` which will analyze the contents of a stock info JSON file, such as `spec/fixturesjamba-juice-stock.json`. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like.
+Create a method `analyze_stock` which will analyze the contents of a stock info JSON file, such as `spec/fixtures/jamba-juice-stock.json`. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like.
 
 Let's assume two things:
 
