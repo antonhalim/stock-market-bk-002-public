@@ -1,7 +1,7 @@
 ---
 tags: comp sci, computer science, logic, cs, interview questions, interview qs
 languages: ruby
-resources: 2
+resources: 4
 level: intermediate
 ---
 
@@ -40,7 +40,7 @@ From this information, you understand that at 9:30 a.m., you could buy a share o
 
 ## Objective
 
-Create a method `get_buy_and_sell_times` which will analyze the contents of a stock info JSON file, such as `spec/fixturesjamba-juice-stock.json`. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like.
+Create a method `analyze_stock` which will analyze the contents of a stock info JSON file, such as `spec/fixturesjamba-juice-stock.json`. This method should tell you what time to buy stock and what time to sell stock. Feel free to create more methods to help this method out if you'd like.
 
 Let's assume two things:
 
@@ -55,9 +55,13 @@ You want to return a hash with three key-value pairs: 1) buy time, 2) sell time,
 
 ## Instructions
 
-Flesh out the method `get_buy_and_sell_times` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
+Flesh out the method `analyze_stock` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
 
 ## Resources
 
 * [HackHands](https://hackhands.com/) - [Ruby Read JSON File Hash](https://hackhands.com/ruby-read-json-file-hash/)
 * [StackOverflow](http://stackoverflow.com/) - [From JSON to a Ruby Hash?](http://stackoverflow.com/a/9055150/2890716)
+* [Ruby Docs](http://apidock.com/ruby/) - [strftime](http://apidock.com/ruby/DateTime/strftime)
+* [StackOverflow](http://stackoverflow.com/) - [Add minutes to Time object](http://stackoverflow.com/a/6936231/2890716)
+
+
