@@ -19,23 +19,23 @@ resources: 2
 
 Today is November 18, 2014. At 9 am, a mysterious stranger emails you a list of Jamba Juice stock prices for today and for some reason, you suspect it was a weathly future version of youself. This is your big chance to invest!
 
-The paper looks like this:
+The paper contains 361 key value pairs, one for each minute between 9:30 a.m. and 4:00 p.m. The paper begins like this:
 
 ```json
-[
-  {"0": "36.23"},
-  {"1": "36.48"},
-  {"2": "37.23"},
-  {"3": "34.03"},
-  {"4": "38.89"},
-  {"4": "22.55"},
-  {"etc."}
-]
+{
+    "0":36.23,
+  "324":36.48,
+    "7":37.23,
+    "3":34.03,
+  "211":38.89,
+    "5":22.55,
+  "390":39.99
+}
 ```
 
-As you can see, the stock market information is an array of hashes, where each hash has one key-value pair: the key is the number of minutes that have passed since the trading floor opened at 9:30 am, the value is the price of a share of Jamba Juice stock (in dollars). 
+As you can see, the stock market information is a hash, where  the keys are the number of minutes that have passed since the trading floor opened at 9:30 a.m. and the values are the prices of a share of Jamba Juice stock (in dollars). 
 
-From this information, you understand that at 9:30 am, you could buy a share of Jamba Juice for $36.23 and at 9:35 am, you could buy it for only $22.55.
+From this information, you understand that at 9:30 a.m., you could buy a share of Jamba Juice for $36.23. You know this because the key of "0" points to that value. You also learn that 9:35 am, you could buy it for only $22.55 (key of "5"). Then at 4:00 p.m. one share was worth $39.99 (key of "390").
 
 ## Objective
 
@@ -46,19 +46,10 @@ Let's assume two things:
 1. You can only buy and sell once because you don't want to arouse suspicion
 2. You must buy stock before you sell stock
 
-You want to return a hash with two key-value pairs:
-
-* First key-value pair:
-  * key: `:buy` *(symbol)*
-  * value: time *(string)*
-* Second key-value pair:
-  * key: `:sell` *(symbol)*
-  * value: time *(string)*
-
-For example:
+You want to return a hash with two key-value pairs, for example:
 
 ```ruby
-{:buy => "9:35 a.m.", :sell => "2:40 p.m."}
+{:buy => "9:35 am", :sell => "2:40 pm"}
 ```
 
 ## Instructions
@@ -66,5 +57,6 @@ For example:
 Flesh out the method `get_buy_and_sell_times` such that it passes the specs. This method should accept one argument, the file path to the JSON stock data.
 
 ## Resources
+
 * [HackHands](https://hackhands.com/) - [Ruby Read JSON File Hash](https://hackhands.com/ruby-read-json-file-hash/)
 * [StackOverflow](http://stackoverflow.com/) - [From JSON to a Ruby Hash?](http://stackoverflow.com/a/9055150/2890716)
