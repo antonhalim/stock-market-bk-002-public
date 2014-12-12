@@ -18,34 +18,34 @@ describe '#analyze_stock' do
     end
 
     it 'correctly predicts when to buy and sell Jamba Juice stock' do
-      expect(@jamba_juice[:buy]).to eq("9:44 am")
-      expect(@jamba_juice[:sell]).to eq("12:06 pm")
-      expect(@jamba_juice[:profit]).to eq("$28.64")
+      {:buy => "9:44 am", :sell => "12:06 pm", :profit => "$28.64"}.each do |k,v|
+        expect(@jamba_juice[k]).to eq(v)
+      end
     end
   end
 
   context "w/Apple JSON" do
     it 'correctly predicts when to buy and sell Apple stock' do
       apple = analyze_stock("spec/fixtures/apple-stock.json")
-      expect(apple[:buy]).to eq("11:04 am")
-      expect(apple[:sell]).to eq("11:06 am")
-      expect(apple[:profit]).to eq("$90.84")
+      {:buy => "11:04 am", :sell => "11:06 am", :profit => "$90.84"}.each do |k,v|
+        expect(apple[k]).to eq(v)
+      end
     end
   end
 
   context "w/Tesla JSON" do
     it 'correctly predicts when to buy and sell Tesla stock' do
-      tesla = analyze_stock("spec/fixtures/tesla-stock.json")  
-      expect(tesla[:buy]).to eq("12:03 pm")
-      expect(tesla[:sell]).to eq("12:16 pm")
-      expect(tesla[:profit]).to eq("$80.09")
+      tesla = analyze_stock("spec/fixtures/tesla-stock.json")
+      {:buy => "12:03 pm", :sell => "12:16 pm", :profit => "$80.09"}.each do |k,v|
+        expect(tesla[k]).to eq(v)
+      end
     end
   end
 
   context "Analyze stock" do
     it "write which stock you should invest in if you could only invest in one" do
-      # replace the string below with "jamba juice", "apple", or "tesla"
-      answer = "apple"
+      # replace the string below ("?") with "jamba juice", "apple", or "tesla"
+      answer = "?"
       expect(encode(answer)).to eq("d0be2dc421be4fcd0172e5afceea3970e2f3d940")
     end
   end
