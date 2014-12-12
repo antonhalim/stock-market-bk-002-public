@@ -24,13 +24,15 @@ def get_buy_and_sell_times(json_file_path)
 end
 
 def format_result(result)
-  puts "max diff: #{result[0]}"
   buy_time = format_time(result[1])
   sell_time = format_time(result[2])
-  {:buy => buy_time, :sell => sell_time}
+  profit = result[0].round(2)
+  {:buy => buy_time, :sell => sell_time, :profit => "$#{profit}"}
 end
 
 def format_time(string)
   time = STOCK_OPENING_TIME + (string.to_i * 60)
-  time.strftime("%I:%M %P")
+  formatted_time = time.strftime("%I:%M %P")
+  formatted_time[0] = '' if formatted_time[0] == "0"
+  formatted_time
 end

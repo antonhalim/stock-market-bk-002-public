@@ -2,6 +2,7 @@
 tags: comp sci, computer science, logic, cs, interview questions, interview qs
 languages: ruby
 resources: 2
+level: intermediate
 ---
 
 # Stock Market
@@ -46,10 +47,10 @@ Let's assume two things:
 1. You can only buy and sell once because you don't want to arouse suspicion
 2. You must buy stock before you sell stock
 
-You want to return a hash with two key-value pairs, for example:
+You want to return a hash with three key-value pairs: 1) buy time, 2) sell time, and 3) profit. For example:
 
 ```ruby
-{:buy => "9:35 am", :sell => "2:40 pm"}
+{:buy => "9:35 am", :sell => "2:40 pm", :profit => "$56.78"}
 ```
 
 ## Instructions
