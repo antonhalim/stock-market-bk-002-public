@@ -45,7 +45,7 @@ describe '#analyze_stock' do
   context "Analyze stock" do
     it "write which stock you should invest in if you could only invest in one" do
       # replace the string below ("?") with "jamba juice", "apple", or "tesla"
-      answer = "?"
+      answer = "apple"
       expect(encode(answer)).to eq("d0be2dc421be4fcd0172e5afceea3970e2f3d940")
     end
   end
